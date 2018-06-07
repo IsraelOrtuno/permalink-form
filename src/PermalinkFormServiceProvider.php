@@ -15,6 +15,16 @@ class PermalinkFormServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->commands(ResourcesCommand::class);
+
+            $this->publishes($scripts = [
+                __DIR__ . '/../resources/stubs/' => resource_path('assets/js')
+            ], 'permalink-scripts');
+
+            $this->publishes($views = [
+                __DIR__ . '/../resources/views' => resource_path('views/vendor/permalink')
+            ], 'permalink-views');
+
+            $this->publishes($views + $scripts, 'permalink-all');
         }
     }
 
