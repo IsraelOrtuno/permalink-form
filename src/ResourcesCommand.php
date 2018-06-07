@@ -43,7 +43,7 @@ if (!mix.config.webpackConfig.resolve) {
 }
 
 mix.config.webpackConfig.resolve.modules.push(
-    path.resolve(__dirname, 'vendor/devio/permalink/resources/assets/js'),
+    path.resolve(__dirname, 'vendor/devio/permalink-form/resources/assets/js'),
 )
 EOL;
         if (! str_contains($mix, 'var path')) {
