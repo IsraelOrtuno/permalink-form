@@ -13,7 +13,7 @@ export default {
 
     computed: {
         url() {
-            let prefix = window.location.protocol + '//' + window.location.host + '/'
+            let prefix = window.location.host.concat('/')
 
             if (this.sharedState.slug.length) {
                 prefix = prefix.concat(this.sharedState.slug)
