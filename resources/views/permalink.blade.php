@@ -1,7 +1,7 @@
 {{-- permalink --}}
 
-<permalink v-cloak inline-template>
-    <div id="permalink">
+<permalink :data="{}" :store="{{ json_encode(Devio\Permalink\Permalink::find(1)) }}" v-cloak inline-template>
+    <div class="permalink">
         @include('permalink::components.tabs')
         <div class="card border-top-0">
             <div class="card-body">

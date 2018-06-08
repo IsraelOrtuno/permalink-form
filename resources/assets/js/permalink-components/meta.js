@@ -22,18 +22,18 @@ export default {
         },
         title: {
             get() {
-                return this.sharedState.meta.title
+                return this.sharedState.meta.title || ''
             },
             set(value) {
-                this.sharedState.meta.title = value
+                this.$set(this.sharedState.meta, 'title', value)
             }
         },
         description: {
             get() {
-                return this.sharedState.meta.description
+                return this.sharedState.meta.description || ''
             },
             set(value) {
-                this.sharedState.meta.description = value
+                this.$set(this.sharedState.meta, 'description', value)
             }
         }
     },

@@ -1,0 +1,22 @@
+.permalink {
+    &-meta {
+        &-preview {
+            font-family : arial, sans-serif;
+            &__title {
+                line-height : 1.2;
+                font-size   : 18px;
+                color       : #1a0dab;
+            }
+            &__link {
+                height      : 18px;
+                line-height : 16px;
+                color       : #006621
+            }
+            &__description {
+                line-height : 1.4;
+                font-size   : 14px;
+                color       : #545454
+            }
+        }
+    }
+}

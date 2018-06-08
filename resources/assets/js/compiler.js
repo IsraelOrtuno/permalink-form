@@ -10,8 +10,9 @@ class Compiler {
 
     compile(subject, wrap = false) {
         // return ''
-        console.log(subject)
         // let matches = subject.match(/\{\{(.*?)\}\}/gi)
+
+        subject = subject || ''
 
         let regex = /\{\{(.*?)\}\}/gi;
         let matches = regex.exec(subject);

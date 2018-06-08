@@ -1,4 +1,4 @@
 // Load all components
-import './components/meta'
-import './components/meta-preview'
-import './components/tabs'
+import './meta'
+import './meta-preview'
+import './tabs'

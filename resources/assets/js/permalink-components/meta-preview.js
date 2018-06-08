@@ -1,4 +1,5 @@
 import store from '../store'
+import '../../scss/permalink.scss'
 
 export default {
     data() {
@@ -28,18 +29,3 @@ export default {
         }
     }
 }
-
-// <style lang="scss">
-//     .seo-preview {
-//         font-family : Arial, sans-serif;
-//         &__title {
-//             color : #1a0dab;
-//         }
-//         &__link {
-//             color : #006621
-//         }
-//         &__description {
-//             color : #545454
-//         }
-//     }
-// </style>

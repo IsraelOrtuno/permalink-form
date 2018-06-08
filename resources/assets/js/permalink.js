@@ -15,7 +15,7 @@ export default {
 
     beforeMount() {
         this.$set(this.sharedState, 'slug', this.store.slug)
-        this.$set(this.sharedState, 'meta', this.store.meta)
+        this.$set(this.sharedState, 'meta', this.store.seo.meta)
         // this.sharedState.meta = this.store.meta
         // store.state = this.store
         compiler.setSources(this.data)
