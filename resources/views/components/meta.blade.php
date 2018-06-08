@@ -9,34 +9,31 @@
                     <label>Slug</label>
                     <div class="input-group input-group-sm mb-3">
                         <div class="input-group-prepend"><span class="input-group-text" v-text="url"></span></div>
-                        <input type="text" class="form-control form-control-sm" name="page[slug]" v-model="slug">
+                        <input type="text" class="form-control form-control-sm" name="permalink[slug]" v-model="slug">
                     </div>
                 </div>
 
                 <!-- Page title -->
                 <div class="form-group">
-                    <label class="d-flex">Page title
-                        <span class="d-inline-block ml-auto font-weight-normal small"><span v-text="title.length"></span>/60</span>
-                    </label>
-                    <input autocomplete="off" type="text" class="form-control form-control-sm" name="page[meta][title]" v-model="title">
+                    <label>Page title <span class="small">@{{ title.length }}/60</span></label>
+                    <input autocomplete="off" type="text" class="form-control form-control-sm" name="permalink[seo][meta][title]" v-model="title">
                     <div class="text-danger font-weight-bold small mt-2" v-if="title.length > 60">
                         The title should not be longer than 60 characters.
                     </div>
-
                 </div>
 
                 <!-- Meta description -->
                 <div class="form-group">
-                    <label class="d-flex">Meta description
-                        <span class="d-inline-block ml-auto font-weight-normal small"><span v-text="description.length"></span>/300</span>
-                    </label>
-                    <textarea class="form-control form-control-sm" name="page[meta][description]" rows="3" v-model="description"></textarea>
+                    <label>Meta description <span class="small">@{{ description.length }}/300</span></label>
+                    <textarea class="form-control form-control-sm" name="permalink[seo][meta][description]" rows="3" v-model="description"></textarea>
                     <div class="text-danger font-weight-bold small mt-2" v-if="description.length > 300">
                         The description should not be longer than 300 characters.
                     </div>
                 </div>
             </div>
-            <div class="permalink-meta__preview col-md-6 border-left">
+            <div class="permalink-meta__preview col-md-6 bordder-left">
+
+
                 @include('permalink::components.meta-preview')
             </div>
         </div>

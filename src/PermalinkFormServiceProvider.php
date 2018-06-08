@@ -13,19 +13,29 @@ class PermalinkFormServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'permalink');
 
+        \View::composer('permalink::permalink', PermalinkFormComposer::class);
+
         if ($this->app->runningInConsole()) {
             $this->commands(ResourcesCommand::class);
 
-            $this->publishes($scripts = [
-                __DIR__ . '/../resources/stubs/' => resource_path('assets/js')
-            ], 'permalink-scripts');
-
-            $this->publishes($views = [
-                __DIR__ . '/../resources/views' => resource_path('views/vendor/permalink')
-            ], 'permalink-views');
-
-            $this->publishes($views + $scripts, 'permalink-all');
+            $this->publishesContent();
         }
+    }
+
+    /**
+     * Registering resources to publish.
+     */
+    protected function publishesContent()
+    {
+        $this->publishes($scripts = [
+            __DIR__ . '/../resources/stubs/' => resource_path('assets/js')
+        ], 'permalink-scripts');
+
+        $this->publishes($views = [
+            __DIR__ . '/../resources/views' => resource_path('views/vendor/permalink')
+        ], 'permalink-views');
+
+        $this->publishes($views + $scripts, 'permalink-all');
     }
 
     /**
