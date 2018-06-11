@@ -17,11 +17,11 @@ class PermalinkFormComposer
     {
         $route = request()->route();
 
-        $permalink = $this->guessPermalinkFromView($view);
+        $permalinkable = $this->guessPermalinkableFromView($view);
 
         $view->with([
-            'permalink'     => $view['permalink'] ?? $permalink ?? [],
-            'permalinkPath' => $this->getPermalinkPath($permalink),
+            'permalink'     => $view['permalink'] ?? $permalinkable->permalink ?? [],
+            'permalinkPath' => $this->getPermalinkPath($permalinkable),
             'permalinkData' => array_merge($route->parameters, $view['permalinkData'] ?? [])
         ]);
     }
@@ -43,11 +43,11 @@ class PermalinkFormComposer
      * @param $view
      * @return null
      */
-    protected function guessPermalinkFromView($view)
+    protected function guessPermalinkableFromView($view)
     {
         foreach ($view->getData() as $variable) {
             if (is_object($variable) && in_array(HasPermalinks::class, class_uses_recursive($variable))) {
-                return $variable->permalink;
+                return $variable;
             }
         }
 

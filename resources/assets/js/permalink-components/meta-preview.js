@@ -15,6 +15,10 @@ export default {
         url() {
             let prefix = window.location.host.concat('/')
 
+            if (this.sharedState.path.length) {
+                prefix = prefix.concat(this.sharedState.path).concat('/')
+            }
+
             if (this.sharedState.slug.length) {
                 prefix = prefix.concat(this.sharedState.slug)
             }

@@ -1,6 +1,6 @@
 {{-- permalink --}}
 
-<permalink :data="{{ json_encode($permalinkData) }}" :store="{{ json_encode($permalink) }}" permalink-path="{{ $permalinkPath }}" v-cloak
+<permalink :data="{{ json_encode($permalinkData) }}" :store="{{ json_encode($permalink) }}" path="{{ $permalinkPath }}" v-cloak
            inline-template>
     <div class="permalink">
         @include('permalink::components.tabs')
