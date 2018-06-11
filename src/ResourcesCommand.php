@@ -28,7 +28,7 @@ class ResourcesCommand extends Command
 
         $mix = file_get_contents(base_path('webpack.mix.js'));
 
-        if (str_contains($mix, 'vendor/devio/permalink/resources/assets/js')) {
+        if (str_contains($mix, 'vendor/devio/permalink-form/resources/assets/js')) {
             $this->comment('This package path was already in your webpack.mix.js!');
             return;
         }
