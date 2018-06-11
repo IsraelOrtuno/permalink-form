@@ -34,7 +34,7 @@ class PermalinkFormComposer
      */
     protected function getPermalinkPath($permalink = null)
     {
-        return $permalink ? implode('/', Permalink::parentPath($permalink)) : [];
+        return $permalink ? implode('/', Permalink::parentPath($permalink)) : '';
     }
 
     /**
