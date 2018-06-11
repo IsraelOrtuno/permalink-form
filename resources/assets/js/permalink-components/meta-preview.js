@@ -20,7 +20,7 @@ export default {
             }
 
             if (this.sharedState.slug.length) {
-                prefix = prefix.concat(this.sharedState.slug)
+                prefix = prefix.concat(`<span class="font-weight-bold">${this.sharedState.slug}</span>`)
             }
 
             return prefix
