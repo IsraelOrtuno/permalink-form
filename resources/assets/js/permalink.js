@@ -16,7 +16,7 @@ export default {
     beforeMount() {
         let seo = this.store.seo || {}
 
-        this.$set(this.sharedState, 'slug', this.store.slug)
+        this.$set(this.sharedState, 'slug', this.store.slug || '')
         this.$set(this.sharedState, 'meta', seo.meta || {})
         // this.sharedState.meta = this.store.meta
         // store.state = this.store
