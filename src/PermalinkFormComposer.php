@@ -2,6 +2,7 @@
 
 namespace Devio\Permalink\Form;
 
+use Devio\Permalink\Permalink;
 use Devio\Permalink\HasPermalinks;
 use Illuminate\Contracts\View\View;
 
@@ -11,8 +12,11 @@ class PermalinkFormComposer
     {
         $route = request()->route();
 
+        $permalink = $this->getPermalinkFromView($view);
+
         $view->with([
-            'permalink'     => $view['permalink'] ?? $this->getPermalinkFromView($view) ?? [],
+            'permalink'     => $view['permalink'] ?? $permalink ?? [],
+            'permalinkPath' => implode('/', Permalink::parentPath($permalink)),
             'permalinkData' => array_merge($route->parameters, $view['permalinkData'] ?? [])
         ]);
     }
