@@ -1,6 +1,4 @@
-# Laravel Permalinks
-
-Manage dynamic routes directly from database.
+# Permalinks and SEO forms
 
 ### Getting started
 
