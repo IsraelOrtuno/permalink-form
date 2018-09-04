@@ -3,4 +3,4 @@ import './permalink-components/bootstrap'
 
 Vue.component('permalink', {
     mixins: [Permalink]
-});
+})

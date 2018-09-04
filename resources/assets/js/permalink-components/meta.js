@@ -36,5 +36,5 @@ export default {
                 this.$set(this.sharedState.meta, 'description', value)
             }
         }
-    },
+    }
 }

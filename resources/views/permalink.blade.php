@@ -11,7 +11,7 @@
                         @include('permalink::components.meta')
                     </div>
                     <div class="tab-pane fade" id="advanced" role="tabpanel" aria-labelledby="advanced-tab">
-                        @include('permalink::components.advanced')
+                        @include('permalink::components.robots')
                     </div>
                 </div>
             </div>
