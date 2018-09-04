@@ -11,12 +11,21 @@ export default {
     },
 
     created() {
-        if (!this.sharedState.meta.hasOwnProperty('robots')) {
+        let meta = this.sharedState.meta
+
+        if (!meta.hasOwnProperty('robots') || !meta.robots) {
             this.$set(this.sharedState.meta, 'robots', [])
+        }
+
+        if (!Array.isArray(meta.robots)) {
+            this.$set(this.sharedState.meta, 'robots', meta.robots.split(' '))
         }
     },
 
     computed: {
+        robots() {
+            return this.sharedState.meta.robots.join(' ')
+        },
         index: {
             get() {
                 return this.getRobotsState(['index', 'noindex'])
