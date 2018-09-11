@@ -1,7 +1,3 @@
 # Permalinks and SEO forms
 
-### Getting started
-
-
-### Usage
-
+This package is under development, check https://github.com/IsraelOrtuno/permalink first.
