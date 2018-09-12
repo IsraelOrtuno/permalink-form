@@ -18,13 +18,13 @@ export default {
         }
 
         if (!Array.isArray(meta.robots)) {
-            this.$set(this.sharedState.meta, 'robots', meta.robots.split(' '))
+            this.$set(this.sharedState.meta, 'robots', meta.robots.split(','))
         }
     },
 
     computed: {
         robots() {
-            return this.sharedState.meta.robots.join(' ')
+            return this.sharedState.meta.robots.join(',')
         },
         index: {
             get() {
