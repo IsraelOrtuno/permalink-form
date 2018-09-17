@@ -8,7 +8,9 @@ export default {
 
     data() {
         return {
-            privateState: {},
+            privateState: {
+                form: false
+            },
             sharedState: store.state
         }
     },
@@ -22,5 +24,11 @@ export default {
         // this.sharedState.meta = this.store.meta
         // store.state = this.store
         compiler.setSources(this.data)
+    },
+
+    methods: {
+        show() {
+            this.privateState.form = true
+        }
     }
 }

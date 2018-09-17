@@ -4,10 +4,10 @@
     <div class="permalink-meta">
         <!-- Slug -->
         <div class="form-group">
-            <label>Slug</label>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend"><span class="input-group-text" v-text="url"></span></div>
-                <input type="text" class="form-control" name="permalink[slug]" v-model="slug">
+            <label>URL and handle</label>
+            <div class="form-control permalink-meta__url">
+                <span v-text="url"></span>
+                <input type="text" class="border-0" name="permalink[slug]" v-model="slug">
             </div>
         </div>
 
@@ -27,8 +27,6 @@
             <div class="text-danger font-weight-bold small mt-2" v-if="description.length > 300">
                 The description should not be longer than 300 characters.
             </div>
-
-            {{-- @include('permalink::components.meta-preview') --}}
         </div>
     </div>
 </permalink-meta>

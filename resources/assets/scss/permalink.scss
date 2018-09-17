@@ -1,21 +1,52 @@
 .permalink {
+    a.permalink-toggler {
+        cursor  : pointer;
+        display : block;
+        margin  : 5px 0;
+        color   : var(--primary)
+    }
+
     &-meta {
         &-preview {
+            opacity     : .8;
             font-family : arial, sans-serif;
-            &__title { 
-                line-height : 1.2;
-                font-size   : 18px;
-                color       : #1a0dab;
+            &__title {
+                line-height   : 21px;
+                font-size     : 18px;
+                margin-bottom : 3px;
+                color         : #1a0dab;
             }
             &__link {
-                height      : 18px;
-                line-height : 16px;
-                color       : #006621
+                margin-bottom : 3px;
+                line-height   : 16px;
+                font-size     : 14px;
+                color         : #006621
             }
             &__description {
-                line-height : 1.4;
+                line-height : 19px;
                 font-size   : 14px;
                 color       : #545454
+            }
+        }
+
+        &__url {
+            display     : flex;
+            align-items : center;
+            span {
+                flex : none;
+            }
+
+            input {
+                display     : inline-block;
+                width       : 100%;
+                margin-left : 3px;
+                color       : rgba(0, 0, 0, .5);
+
+                &:focus {
+                    box-shadow : none;
+                    outline    : none;
+                    color      : var(--black);
+                }
             }
         }
     }

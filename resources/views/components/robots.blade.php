@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>Allow search engines to show this page in search results?</label>
+                    <label>Index this page in search results?</label>
                     <select v-model="index" class="form-control">
                         <option value="default">Use default</option>
                         <option value="index">Yes (index)</option>
@@ -15,7 +15,7 @@
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>Should search engines follow links on this page?</label>
+                    <label>Let search engines follow links?</label>
                     <select v-model="follow" class="form-control">
                         <option value="default">Use default</option>
                         <option value="follow">Yes (follow)</option>
