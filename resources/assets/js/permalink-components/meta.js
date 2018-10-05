@@ -10,7 +10,7 @@ export default {
 
     computed: {
         url() {
-            return window.location.protocol + '//' + window.location.host + '/'
+            return window.location.protocol + '//' + window.location.host + '/' + (this.sharedState.path ? (this.sharedState.path + '/') : '')
         },
         slug: {
             get() {

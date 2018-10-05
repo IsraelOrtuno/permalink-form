@@ -1,1 +1,7 @@
-export default {state: {}}
+export default {
+    state: {
+        meta: {},
+        opengraph: {},
+        twitter: {}
+    }
+}

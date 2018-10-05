@@ -11,18 +11,18 @@ export default {
             privateState: {
                 form: false
             },
-            sharedState: store.state
+            sharedState: {}
         }
     },
 
     beforeMount() {
-        let seo = this.store.seo || {}
+        Object.assign(store.state, this.store.seo, {
+            path: this.path || '',
+            slug: this.store.slug || ''
+        })
 
-        this.$set(this.sharedState, 'path', this.path || '')
-        this.$set(this.sharedState, 'slug', this.store.slug || '')
-        this.$set(this.sharedState, 'meta', seo.meta || {})
-        // this.sharedState.meta = this.store.meta
-        // store.state = this.store
+        this.sharedState = store.state
+
         compiler.setSources(this.data)
     },
 

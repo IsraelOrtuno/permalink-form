@@ -26,10 +26,10 @@ export default {
             return prefix
         },
         title() {
-            return compiler.compile(this.sharedState.meta.title)
+            return compiler.compile(this.sharedState.title)
         },
         description() {
-            return compiler.compile(this.sharedState.meta.description)
+            return compiler.compile(this.sharedState.description)
         }
     }
 }
