@@ -10,6 +10,8 @@
             <hr class="mt-3 mb-3">
             @include('permalink::components.meta')
             @include('permalink::components.robots')
+            @include('permalink::components.opengraph')
+            @include('permalink::components.twitter')
         </div>
     </div>
 </permalink>

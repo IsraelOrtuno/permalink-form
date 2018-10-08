@@ -1,4 +1,4 @@
-{{-- components.meta-preview --}}
+{{-- components.meta --}}
 
 <permalink-meta v-cloak inline-template>
     <div class="permalink-meta">
