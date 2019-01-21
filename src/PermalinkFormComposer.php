@@ -40,8 +40,6 @@ class PermalinkFormComposer
         }
 
         return '';
-
-//        return $permalink ? implode('/', Permalink::parentPath($permalink)) : '';
     }
 
     /**
