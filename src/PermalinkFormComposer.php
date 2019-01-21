@@ -4,7 +4,6 @@ namespace Devio\Permalink\Form;
 
 use Devio\Permalink\HasPermalinks;
 use Illuminate\Contracts\View\View;
-use Devio\Permalink\Services\NestingService;
 
 class PermalinkFormComposer
 {
