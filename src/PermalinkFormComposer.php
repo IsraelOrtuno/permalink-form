@@ -2,9 +2,9 @@
 
 namespace Devio\Permalink\Form;
 
-use Devio\Permalink\Permalink;
 use Devio\Permalink\HasPermalinks;
 use Illuminate\Contracts\View\View;
+use Devio\Permalink\Services\NestingService;
 
 class PermalinkFormComposer
 {
@@ -34,7 +34,15 @@ class PermalinkFormComposer
      */
     protected function getPermalinkPath($permalink = null)
     {
-        return $permalink ? implode('/', Permalink::parentPath($permalink)) : '';
+        if ($permalink) {
+            return substr(
+                $permalink->final_path, 0, strrpos($permalink->final_path, "/")
+            );
+        }
+
+        return '';
+
+//        return $permalink ? implode('/', Permalink::parentPath($permalink)) : '';
     }
 
     /**
