@@ -33,13 +33,9 @@ class PermalinkFormComposer
      */
     protected function getPermalinkPath($permalink = null)
     {
-        if ($permalink) {
-            return substr(
-                $permalink->final_path, 0, strrpos($permalink->final_path, "/")
-            );
-        }
-
-        return '';
+        return $permalink ? substr(
+            $permalink->final_path, 0, strrpos($permalink->final_path, "/")
+        ) : '';
     }
 
     /**
